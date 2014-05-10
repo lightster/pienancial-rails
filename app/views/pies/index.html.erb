@@ -1,0 +1,29 @@
+<h1>Listing pies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Title</th>
+      <th>Is required</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pies.each do |py| %>
+      <tr>
+        <td><%= py.user %></td>
+        <td><%= py.title %></td>
+        <td><%= py.is_required %></td>
+        <td><%= link_to 'Show', py %></td>
+        <td><%= link_to 'Edit', edit_py_path(py) %></td>
+        <td><%= link_to 'Destroy', py, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pie', new_py_path %>

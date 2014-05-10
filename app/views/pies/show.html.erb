@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @py.user %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @py.title %>
+</p>
+
+<p>
+  <strong>Is required:</strong>
+  <%= @py.is_required %>
+</p>
+
+<%= link_to 'Edit', edit_py_path(@py) %> |
+<%= link_to 'Back', pies_path %>
