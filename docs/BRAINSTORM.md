@@ -13,7 +13,8 @@ Track the pie pieces that you spend your money on and make sure you are within b
   - Rails
   - SQLite
   - API First
-  - Bootstrap
+  - Bootstrap 3
+  - AngularJS
 
 # Thoughts
 
