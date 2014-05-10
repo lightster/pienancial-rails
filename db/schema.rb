@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140510180055) do
+ActiveRecord::Schema.define(version: 20140510180237) do
+
+  create_table "pie_piece_transactions", force: true do |t|
+    t.integer  "pie_id"
+    t.integer  "pie_piece_id"
+    t.integer  "transaction_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "pie_piece_transactions", ["pie_id"], name: "index_pie_piece_transactions_on_pie_id"
+  add_index "pie_piece_transactions", ["pie_piece_id"], name: "index_pie_piece_transactions_on_pie_piece_id"
+  add_index "pie_piece_transactions", ["transaction_id"], name: "index_pie_piece_transactions_on_transaction_id"
 
   create_table "pie_pieces", force: true do |t|
     t.integer  "pie_id"

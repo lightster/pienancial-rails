@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  pie_id: 
+  pie_piece_id: 
+  transaction_id: 
+
+two:
+  pie_id: 
+  pie_piece_id: 
+  transaction_id: 
