@@ -1,0 +1,27 @@
+<h1>Listing pie_pieces</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pie</th>
+      <th>Title</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pie_pieces.each do |pie_piece| %>
+      <tr>
+        <td><%= pie_piece.pie %></td>
+        <td><%= pie_piece.title %></td>
+        <td><%= link_to 'Show', pie_piece %></td>
+        <td><%= link_to 'Edit', edit_pie_piece_path(pie_piece) %></td>
+        <td><%= link_to 'Destroy', pie_piece, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pie piece', new_pie_piece_path %>

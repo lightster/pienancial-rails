@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :pie_pieces
+
   resources :pies
 
   resources :users

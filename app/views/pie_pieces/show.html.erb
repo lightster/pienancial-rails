@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pie:</strong>
+  <%= @pie_piece.pie %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @pie_piece.title %>
+</p>
+
+<%= link_to 'Edit', edit_pie_piece_path(@pie_piece) %> |
+<%= link_to 'Back', pie_pieces_path %>

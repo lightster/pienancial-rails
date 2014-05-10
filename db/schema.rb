@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140510175615) do
+ActiveRecord::Schema.define(version: 20140510175758) do
+
+  create_table "pie_pieces", force: true do |t|
+    t.integer  "pie_id"
+    t.string   "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "pie_pieces", ["pie_id"], name: "index_pie_pieces_on_pie_id"
 
   create_table "pies", force: true do |t|
     t.integer  "user_id"
