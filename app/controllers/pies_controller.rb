@@ -24,7 +24,7 @@ class PiesController < ApplicationController
   # POST /pies
   # POST /pies.json
   def create
-    @py = Pie.new(py_params)
+    @py = Pie.new(pie_params)
 
     respond_to do |format|
       if @py.save
@@ -41,7 +41,7 @@ class PiesController < ApplicationController
   # PATCH/PUT /pies/1.json
   def update
     respond_to do |format|
-      if @py.update(py_params)
+      if @py.update(pie_params)
         format.html { redirect_to @py, notice: 'Pie was successfully updated.' }
         format.json { render :show, status: :ok, location: @py }
       else
@@ -68,7 +68,7 @@ class PiesController < ApplicationController
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def py_params
-      params.require(:py).permit(:user_id, :title, :is_required)
+    def pie_params
+      params.require(:pie).permit(:user_id, :title, :is_required)
     end
 end
