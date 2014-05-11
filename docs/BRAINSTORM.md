@@ -85,6 +85,7 @@ unique on (email)
     rails generate scaffold PiePiece pie:belongs_to title:string
     rails generate scaffold Transaction user:belongs_to date:date amount:decimal{12.2} description:string
     rails generate scaffold PiePieceTransaction pie:belongs_to pie_piece:belongs_to transaction:belongs_to
+    rails g migration MakePieTitlesUniquePerUser
 
 # API
 
