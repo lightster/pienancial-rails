@@ -1,8 +1,4 @@
 Rails.application.routes.draw do
-  resources :pie_piece_transactions
-
-  resources :transactions
-
   resources :pie_pieces
 
   resources :pies
