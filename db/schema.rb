@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140510180237) do
+ActiveRecord::Schema.define(version: 20140511071606) do
 
   create_table "pie_piece_transactions", force: true do |t|
     t.integer  "pie_id"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20140510180237) do
     t.datetime "updated_at"
   end
 
+  add_index "pies", ["user_id", "title"], name: "index_pies_on_user_id_and_title", unique: true
   add_index "pies", ["user_id"], name: "index_pies_on_user_id"
 
   create_table "transactions", force: true do |t|
