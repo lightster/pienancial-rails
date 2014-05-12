@@ -33,6 +33,13 @@ Track the pie pieces that you spend your money on and make sure you are within b
  - id
  - user_id
  - date
+ - created_at
+ - updated_at
+
+### transaction_splits
+
+ - id
+ - transaction_id
  - amount
  - description
  - created_at
@@ -83,8 +90,9 @@ unique on (email)
     rails generate scaffold User email:string:uniq password:string name:string
     rails generate scaffold Pie user:belongs_to title:string is_required:boolean
     rails generate scaffold PiePiece pie:belongs_to title:string
-    rails generate scaffold TransactionRecord user:belongs_to date:date amount:decimal{12.2} description:string
-    rails generate scaffold PiePieceTransactionRecord pie:belongs_to pie_piece:belongs_to transaction_record:belongs_to
+    rails generate scaffold TransactionRecord user:belongs_to transaction_date:date
+    rails generate scaffold TransactionSplit transaction_record:belongs_to amount:decimal{12.2} description:string
+    rails generate scaffold PiePieceTransactionSplit pie:belongs_to pie_piece:belongs_to transaction_split:belongs_to
     rails g migration MakePieTitlesUniquePerUser
 
 # API
