@@ -1,0 +1,29 @@
+<h1>Listing pie_piece_transaction_splits</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pie</th>
+      <th>Pie piece</th>
+      <th>Transaction split</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pie_piece_transaction_splits.each do |pie_piece_transaction_split| %>
+      <tr>
+        <td><%= pie_piece_transaction_split.pie %></td>
+        <td><%= pie_piece_transaction_split.pie_piece %></td>
+        <td><%= pie_piece_transaction_split.transaction_split %></td>
+        <td><%= link_to 'Show', pie_piece_transaction_split %></td>
+        <td><%= link_to 'Edit', edit_pie_piece_transaction_split_path(pie_piece_transaction_split) %></td>
+        <td><%= link_to 'Destroy', pie_piece_transaction_split, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pie piece transaction split', new_pie_piece_transaction_split_path %>

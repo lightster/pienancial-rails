@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Pie:</strong>
+  <%= @pie_piece_transaction_split.pie %>
+</p>
+
+<p>
+  <strong>Pie piece:</strong>
+  <%= @pie_piece_transaction_split.pie_piece %>
+</p>
+
+<p>
+  <strong>Transaction split:</strong>
+  <%= @pie_piece_transaction_split.transaction_split %>
+</p>
+
+<%= link_to 'Edit', edit_pie_piece_transaction_split_path(@pie_piece_transaction_split) %> |
+<%= link_to 'Back', pie_piece_transaction_splits_path %>

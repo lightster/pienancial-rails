@@ -1,0 +1,29 @@
+<%= form_for(@pie_piece_transaction_split) do |f| %>
+  <% if @pie_piece_transaction_split.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@pie_piece_transaction_split.errors.count, "error") %> prohibited this pie_piece_transaction_split from being saved:</h2>
+
+      <ul>
+      <% @pie_piece_transaction_split.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :pie_id %><br>
+    <%= f.text_field :pie_id %>
+  </div>
+  <div class="field">
+    <%= f.label :pie_piece_id %><br>
+    <%= f.text_field :pie_piece_id %>
+  </div>
+  <div class="field">
+    <%= f.label :transaction_split_id %><br>
+    <%= f.text_field :transaction_split_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
