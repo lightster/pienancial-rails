@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140511071606) do
+ActiveRecord::Schema.define(version: 20140514000545) do
 
   create_table "pie_pieces", force: true do |t|
     t.integer  "pie_id"
@@ -32,6 +32,15 @@ ActiveRecord::Schema.define(version: 20140511071606) do
 
   add_index "pies", ["user_id", "title"], name: "index_pies_on_user_id_and_title", unique: true
   add_index "pies", ["user_id"], name: "index_pies_on_user_id"
+
+  create_table "transaction_records", force: true do |t|
+    t.integer  "user_id"
+    t.date     "transaction_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "transaction_records", ["user_id"], name: "index_transaction_records_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "email"

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :transaction_records
+
   resources :pie_pieces
 
   resources :pies
