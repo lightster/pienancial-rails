@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140514000545) do
+ActiveRecord::Schema.define(version: 20140514000745) do
 
   create_table "pie_pieces", force: true do |t|
     t.integer  "pie_id"
@@ -41,6 +41,16 @@ ActiveRecord::Schema.define(version: 20140514000545) do
   end
 
   add_index "transaction_records", ["user_id"], name: "index_transaction_records_on_user_id"
+
+  create_table "transaction_splits", force: true do |t|
+    t.integer  "transaction_record_id"
+    t.decimal  "amount",                precision: 12, scale: 2
+    t.string   "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "transaction_splits", ["transaction_record_id"], name: "index_transaction_splits_on_transaction_record_id"
 
   create_table "users", force: true do |t|
     t.string   "email"

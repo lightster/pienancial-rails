@@ -1,0 +1,29 @@
+<%= form_for(@transaction_split) do |f| %>
+  <% if @transaction_split.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@transaction_split.errors.count, "error") %> prohibited this transaction_split from being saved:</h2>
+
+      <ul>
+      <% @transaction_split.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :transaction_record_id %><br>
+    <%= f.text_field :transaction_record_id %>
+  </div>
+  <div class="field">
+    <%= f.label :amount %><br>
+    <%= f.text_field :amount %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
