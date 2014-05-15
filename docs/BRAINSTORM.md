@@ -98,3 +98,16 @@ unique on (email)
 # API
 
 Need to be able to:
+
+ - Create new transaction splits (`POST /api/v1/transaction_splits`)
+ - Update transaction splits (`PUT /api/v1/transaction_splits/:id`)
+    - Do not allow transaction split to be reassociated with new transaction record
+ - Delete transaction splits (`DELETE /api/v1/transaction_splits/:id`)
+ - List transaction splits (`GET /api/v1/transaction_splits/`)
+ - Create pies (`POST /api/v1/pies`)
+ - Update pies (`PUT /api/v1/pies/:id`)
+ - Delete pies (`DELETE /api/v1/pies/:id`)
+ - Create pie pieces (`POST /api/v1/pie_pieces`)
+ - Update pies pieces (`PUT /api/v1/pie_pieces/:id`)
+ - Delete pies pieces (`DELETE /api/v1/pie_pieces/:id`)
+
