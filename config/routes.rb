@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'welcome/index'
+
   resources :pie_piece_transaction_splits
 
   resources :transaction_splits
