@@ -12,10 +12,11 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
 //
 // Loads all Bootstrap javascripts
 //= require bootstrap
 //
 // Just the core of AngularJS
 //= require angular
+//
+//= require_tree .
