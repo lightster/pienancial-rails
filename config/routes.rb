@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'welcome/index'
+  get 'welcome/template'
 
   resources :pie_piece_transaction_splits
 
