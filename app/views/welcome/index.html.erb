@@ -1,3 +1,17 @@
-<ng-view>
-  Loading
-</ng-view>
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+  <title>Pienancial</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= csrf_meta_tags %>
+</head>
+<body ng-controller="AppCtrl">
+
+  <ng-view>
+    Loading
+  </ng-view>
+
+  <%= javascript_include_tag 'application' %>
+
+</body>
+</html>
