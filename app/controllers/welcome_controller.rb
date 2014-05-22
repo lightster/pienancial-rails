@@ -3,8 +3,6 @@ class WelcomeController < ApplicationController
   end
 
   def template
-    respond_to do |format|
-      format.html { render :layout => false }
-    end
+    render :layout => false
   end
 end
