@@ -1,5 +1,5 @@
 class Api::V1::PiesController < ApplicationController
-  before_action :set_pie, only: [:destroy]
+  before_action :set_pie, only: [:update, :destroy]
 
   def index
     @pies = Pie.all.user(1)
@@ -18,6 +18,11 @@ class Api::V1::PiesController < ApplicationController
   end
 
   def update
+    if @pie.update(pie_params)
+      render json: @pie, status: :ok
+    else
+      render json: @pie.errors, status: :unprocessable_entity
+    end
   end
 
   def destroy
