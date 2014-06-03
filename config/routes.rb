@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   namespace :api, :defaults => {:format => :json} do
     namespace :v1 do
       resources :pies, only: [:index, :create, :update, :destroy]
+      resources :pie_pieces, only: [:index, :create, :update, :destroy]
       resources :transaction_splits, only: [:index, :create, :update, :destroy]
     end
   end
