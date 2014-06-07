@@ -4,6 +4,13 @@ class Api::V1::PiePiecesController < ApplicationController
   end
 
   def create
+    @pie_piece = PiePiece.new(pie_piece_params)
+
+    if @pie_piece.save
+      render json: @pie_piece, status: :created
+    else
+      render json: @pie_piece.errors, status: :unprocessable_entity
+    end
   end
 
   def update
@@ -11,4 +18,12 @@ class Api::V1::PiePiecesController < ApplicationController
 
   def destroy
   end
+
+  private
+    def pie_piece_params
+      new_params = params.permit(
+        :pie_id,
+        :title
+      )
+    end
 end
