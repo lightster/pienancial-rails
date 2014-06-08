@@ -1,4 +1,6 @@
 class Api::V1::PiePiecesController < ApplicationController
+  before_action :set_pie_piece, only: [:destroy]
+
   def index
     @pie_pieces = PiePiece.all.user(1)
   end
@@ -17,9 +19,18 @@ class Api::V1::PiePiecesController < ApplicationController
   end
 
   def destroy
+    @pie_piece.destroy
+    head :no_content
   end
 
   private
+    def set_pie_piece
+      @pie_piece = PiePiece.joins(:pie).where(
+        id: params[:id],
+        pies: { user_id: get_current_user.id }
+      ).take!
+    end
+
     def pie_piece_params
       new_params = params.permit(
         :pie_id,
