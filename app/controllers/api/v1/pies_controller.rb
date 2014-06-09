@@ -2,7 +2,7 @@ class Api::V1::PiesController < ApplicationController
   before_action :set_pie, only: [:update, :destroy]
 
   def index
-    @pies = Pie.all.user(1)
+    @pies = Pie.all.user(get_current_user.id)
   end
 
   def create
