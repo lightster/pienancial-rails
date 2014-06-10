@@ -6,7 +6,9 @@ class Api::V1::PiePiecesController < ApplicationController
   end
 
   def create
-    @pie_piece = PiePiece.new(pie_piece_params)
+    @pie_piece = PiePiece.new(pie_piece_params.merge!(
+      :pie_id => params.require(:pie_id)
+    ))
 
     if @pie_piece.save
       render json: @pie_piece, status: :created
@@ -38,7 +40,6 @@ class Api::V1::PiePiecesController < ApplicationController
 
     def pie_piece_params
       new_params = params.permit(
-        :pie_id,
         :title
       )
     end
