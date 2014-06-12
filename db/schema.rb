@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140611135019) do
+ActiveRecord::Schema.define(version: 20140612135359) do
 
   create_table "pie_piece_transaction_splits", force: true do |t|
     t.integer  "pie_id"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20140611135019) do
     t.datetime "updated_at"
   end
 
+  add_index "pie_pieces", ["pie_id", "title"], name: "index_pie_pieces_on_pie_id_and_title", unique: true
   add_index "pie_pieces", ["pie_id"], name: "index_pie_pieces_on_pie_id"
 
   create_table "pies", force: true do |t|
