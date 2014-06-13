@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140612135359) do
+ActiveRecord::Schema.define(version: 20140613080333) do
 
   create_table "pie_piece_transaction_splits", force: true do |t|
     t.integer  "pie_id"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20140612135359) do
 
   add_index "pie_piece_transaction_splits", ["pie_id"], name: "index_pie_piece_transaction_splits_on_pie_id"
   add_index "pie_piece_transaction_splits", ["pie_piece_id"], name: "index_pie_piece_transaction_splits_on_pie_piece_id"
+  add_index "pie_piece_transaction_splits", ["transaction_split_id", "pie_id"], name: "index_pp_ts_transaction_split_pie", unique: true
   add_index "pie_piece_transaction_splits", ["transaction_split_id"], name: "index_pie_piece_transaction_splits_on_transaction_split_id"
 
   create_table "pie_pieces", force: true do |t|
