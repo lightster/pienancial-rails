@@ -37,4 +37,7 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'bootstrap-sass'
-gem 'angularjs-rails'
+
+gem 'ember-rails'
+gem 'ember-source', '1.5.0'
+
