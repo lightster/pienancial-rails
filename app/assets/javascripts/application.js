@@ -16,8 +16,8 @@
 // Loads all Bootstrap javascripts
 //= require bootstrap
 //
-// Just the core of AngularJS
-//= require angular
-//= require angular-route
+//= require handlebars
+//= require ember
+//= require ember-data
 //
 //= require_tree .
